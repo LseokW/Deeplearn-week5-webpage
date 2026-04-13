@@ -1,0 +1,37 @@
+[
+  {
+    "id": "reg",
+    "title": "Regularization (규제)",
+    "description": "과적합을 방지하는 정규화 기법: L1/L2, Dropout, Batch Normalization",
+    "keywords": ["L1", "L2", "Dropout", "Batch Normalization"],
+    "order": 1
+  },
+  {
+    "id": "overfit",
+    "title": "Overfitting vs Underfitting",
+    "description": "과적합과 과소적합의 개념, 진단 방법, 모델 복잡도 조절",
+    "keywords": ["과적합", "과소적합", "모델 복잡도", "편향-분산 트레이드오프"],
+    "order": 2
+  },
+  {
+    "id": "augment",
+    "title": "Data Augmentation (데이터 증강)",
+    "description": "학습 데이터를 다양하게 변형하여 모델 일반화 성능 향상",
+    "keywords": ["RandomFlip", "RandomRotation", "RandomZoom", "ImageDataGenerator"],
+    "order": 3
+  },
+  {
+    "id": "transfer",
+    "title": "Transfer Learning (전이 학습)",
+    "description": "사전 학습된 모델을 활용하여 새 태스크에 적용하는 방법",
+    "keywords": ["MobileNetV2", "Feature Extraction", "Fine-tuning", "ImageNet"],
+    "order": 4
+  },
+  {
+    "id": "cnn",
+    "title": "MNIST CNN 실습",
+    "description": "합성곱 신경망으로 MNIST 손글씨 숫자 분류 구현",
+    "keywords": ["Conv2D", "MaxPooling2D", "Flatten", "Dense", "MNIST"],
+    "order": 5
+  }
+]
