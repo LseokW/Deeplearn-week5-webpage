@@ -10,7 +10,11 @@ async def get_current_user(
     request: Request,
     session: AsyncSession = Depends(get_session),
 ) -> User:
-    token = request.cookies.get("access_token")
+    token = None
+    auth_header = request.headers.get("Authorization")
+    if auth_header and auth_header.startswith("Bearer "):
+        token = auth_header[7:]
+
     if not token:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
