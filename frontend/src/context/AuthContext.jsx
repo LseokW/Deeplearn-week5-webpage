@@ -23,7 +23,7 @@ export function AuthProvider({ children }) {
   }, []);
 
   function login() {
-    window.location.href = "/api/auth/login";
+    window.location.href = `${import.meta.env.VITE_API_URL || ""}/api/auth/login`;
   }
 
   async function logout() {
