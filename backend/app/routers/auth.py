@@ -54,7 +54,8 @@ async def callback(
         )
         token_data = token_resp.json()
         if "access_token" not in token_data:
-            return RedirectResponse(f"{settings.FRONTEND_URL}/?error=token_exchange_failed")
+            err = token_data.get("error", "unknown")
+            return RedirectResponse(f"{settings.FRONTEND_URL}/?error={err}")
 
         userinfo_resp = await client.get(
             GOOGLE_USERINFO_URL,
