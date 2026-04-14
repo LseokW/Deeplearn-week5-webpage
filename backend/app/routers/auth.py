@@ -53,12 +53,16 @@ async def callback(
             },
         )
         token_data = token_resp.json()
+        if "access_token" not in token_data:
+            return RedirectResponse(f"{settings.FRONTEND_URL}/?error=token_exchange_failed")
 
         userinfo_resp = await client.get(
             GOOGLE_USERINFO_URL,
             headers={"Authorization": f"Bearer {token_data['access_token']}"},
         )
         userinfo = userinfo_resp.json()
+        if "email" not in userinfo:
+            return RedirectResponse(f"{settings.FRONTEND_URL}/?error=userinfo_failed")
 
     result = await session.exec(select(User).where(User.email == userinfo["email"]))
     user = result.first()
