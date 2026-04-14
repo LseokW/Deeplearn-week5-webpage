@@ -23,8 +23,7 @@ export function AuthProvider({ children }) {
   }, []);
 
   function login() {
-    const apiUrl = import.meta.env.VITE_API_URL || "https://deeplearn-week5-webpage-production.up.railway.app";
-    window.location.href = `${apiUrl}/api/auth/login`;
+    window.location.href = "https://deeplearn-week5-webpage-production.up.railway.app/api/auth/login";
   }
 
   async function logout() {
