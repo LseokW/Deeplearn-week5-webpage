@@ -32,4 +32,8 @@ app.include_router(payment.router)
 
 @app.get("/api/health")
 async def health():
-    return {"status": "ok"}
+    return {
+        "status": "ok",
+        "redirect_uri": settings.GOOGLE_REDIRECT_URI,
+        "client_id_prefix": settings.GOOGLE_CLIENT_ID[:20] if settings.GOOGLE_CLIENT_ID else "EMPTY",
+    }
